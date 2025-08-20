@@ -1,11 +1,11 @@
 /* Основная цветовая палитра */
 :root {
-    --primary-color: #3498db;
-    --secondary-color: #2980b9;
-    --background-light: #e9eef2;
-    --background-white: #ffffff;
-    --text-dark: #2c3e50;
-    --text-light: #ffffff;
+    --primary-color: #3498db; /* Синий */
+    --secondary-color: #2980b9; /* Тёмно-синий */
+    --background-color: #004d99; /* Глубокий синий фон */
+    --text-light: #ffffff; /* Белый текст */
+    --text-dark: #2c3e50; /* Тёмный текст для контраста */
+    --accent-color: #34495e; /* Тёмно-серый для акцентов */
     --shadow-light: rgba(0,0,0,0.1);
     --shadow-medium: rgba(0,0,0,0.2);
 }
@@ -16,16 +16,16 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background: var(--background-light);
-    color: var(--text-dark);
+    background: var(--background-color);
+    color: var(--text-light);
 }
 
 /* Стили контейнеров */
-header, main, footer {
+main, footer {
     padding: 30px;
     margin: 20px auto;
     max-width: 960px;
-    background-color: var(--background-white);
+    background-color: var(--primary-color);
     border-radius: 20px;
     box-shadow: 0 10px 30px var(--shadow-light), 0 0 10px rgba(0,0,0,0.05);
 }
@@ -34,7 +34,7 @@ header, main, footer {
     padding: 40px;
     margin-top: 30px;
     border-radius: 20px;
-    background-color: var(--background-white);
+    background-color: var(--secondary-color);
     box-shadow: 0 8px 20px var(--shadow-light);
 }
 
@@ -43,6 +43,11 @@ header, main, footer {
     background-color: var(--primary-color);
     color: var(--text-light);
     text-align: center;
+    padding: 50px 30px;
+    border-radius: 20px;
+    margin: 20px auto;
+    max-width: 960px;
+    box-shadow: 0 10px 30px var(--shadow-light);
 }
 
 .hero-section h1 {
@@ -57,14 +62,22 @@ header, main, footer {
 }
 
 h2 {
-    color: var(--text-dark);
+    color: var(--text-light);
     text-align: center;
     font-weight: 700;
 }
 
+h3 {
+    color: var(--text-light);
+}
+
+p {
+    color: var(--text-light);
+}
+
 /* Навигационное меню */
 .main-nav {
-    background: var(--background-white);
+    background: var(--secondary-color);
     text-align: center;
     padding: 15px 0;
     position: sticky;
@@ -77,7 +90,7 @@ h2 {
 }
 
 .main-nav a {
-    color: var(--text-dark);
+    color: var(--text-light);
     text-decoration: none;
     font-size: 16px;
     font-weight: bold;
@@ -87,7 +100,6 @@ h2 {
 }
 
 .main-nav a:hover {
-    color: var(--text-light);
     background-color: var(--primary-color);
     transform: translateY(-2px);
 }
@@ -119,75 +131,189 @@ h2 {
 .big-button:hover {
     transform: translateY(-5px);
     box-shadow: 0 12px 24px var(--shadow-medium);
-    background: var(--secondary-color);
+    background: var(--accent-color);
 }
 
-/* Модальное окно */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 101;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.5);
-}
-
-.modal-content {
-    background-color: var(--background-white);
-    margin: 15% auto;
-    padding: 40px;
-    border: none;
-    width: 80%;
-    max-width: 450px;
-    border-radius: 16px;
+/* Общие стили для страниц услуг */
+.product-page {
     text-align: center;
-    position: relative;
-    box-shadow: 0 10px 20px var(--shadow-medium);
-    animation: fadeIn 0.5s;
 }
 
-.close-btn {
-    color: #aaa;
-    position: absolute;
-    top: 15px;
-    right: 25px;
-    font-size: 36px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: color 0.3s;
+.product-info-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 30px;
 }
 
-.close-btn:hover, .close-btn:focus {
-    color: #555;
-    text-decoration: none;
-}
-
-.modal-btn {
-    display: block;
-    width: 80%;
-    padding: 15px;
-    margin: 15px auto;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 30px;
+.info-card {
+    background-color: var(--secondary-color);
+    border-radius: 16px;
+    box-shadow: 0 8px 20px var(--shadow-light);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.modal-btn:hover {
+.info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px var(--shadow-medium);
+}
+
+.info-card-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 16px 16px 0 0;
+}
+
+.info-text {
+    padding: 25px;
+    text-align: center;
+}
+
+.info-text h3 {
+    margin-top: 0;
+    color: var(--text-light);
+}
+
+.price-list {
+    margin-top: 15px;
+    text-align: left;
+}
+
+.price-list p {
+    margin: 5px 0;
+    font-size: 1.1em;
+}
+
+/* Кнопки с ценами */
+.price-buttons-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.price-button {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    padding: 12px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 6px var(--shadow-light);
+}
+
+.price-button:hover {
+    background-color: var(--accent-color);
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px var(--shadow-light);
 }
 
-.whatsapp-btn {
-    background-color: #25D366;
+/* Блок с информацией */
+.details-info {
+    margin-top: 30px;
+    background-color: var(--primary-color);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px var(--shadow-light);
 }
 
-.telegram-btn {
-    background-color: #0088CC;
+.details-info p {
+    margin: 10px 0;
+    font-size: 1em;
+}
+
+.details-info strong {
+    color: #ffcc00; /* Яркий цвет для выделения */
+}
+
+/* Слайдер для DTF */
+.slider-container {
+    position: relative;
+    max-width: 600px;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px var(--shadow-light);
+}
+
+.slider-img {
+    width: 100%;
+    display: none;
+    border-radius: 16px;
+}
+
+.slider-dots {
+    text-align: center;
+    padding: 10px;
+}
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: var(--primary-color);
+}
+
+/* Кружки */
+.mug-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 25px;
+    text-align: center;
+}
+
+.mug-card {
+    background-color: var(--primary-color);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px var(--shadow-light);
+    padding: 15px;
+    width: 150px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mug-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px var(--shadow-medium);
+}
+
+.mug-img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+/* Сублимация на футболках */
+.tshirt-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--primary-color);
+    border-radius: 16px;
+    box-shadow: 0 8px 20px var(--shadow-light);
+    padding: 25px;
+}
+
+.tshirt-img {
+    width: 150px;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
 }
 
 /* Стили для контактов */
@@ -202,6 +328,7 @@ h2 {
     list-style-type: none;
     font-size: 1.1em;
     font-weight: 500;
+    color: var(--text-light);
 }
 
 .address-list li {
@@ -209,7 +336,7 @@ h2 {
 }
 
 .map-link {
-    color: var(--primary-color);
+    color: #ffcc00;
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease;
@@ -217,32 +344,27 @@ h2 {
 
 .map-link:hover {
     text-decoration: underline;
-    color: var(--secondary-color);
+    color: var(--text-light);
 }
 
 /* Футер */
 footer {
     text-align: center;
-    background-color: var(--background-light);
+    background-color: var(--secondary-color);
     box-shadow: none;
 }
 footer p {
-    color: var(--text-dark);
+    color: var(--text-light);
 }
 
-/* Анимации */
-@keyframes fadeIn {
-    from { opacity: 0; transform: scale(0.8); }
-    to { opacity: 1; transform: scale(1); }
-}
-
-/* Медиазапросы для адаптивности */
+/* Адаптивные стили */
 @media (min-width: 768px) {
-    .hero-section h1 {
-        font-size: 3em;
+    .product-info-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
     }
-
-    .hero-section p {
-        font-size: 1.2em;
+    .info-card {
+        width: 45%;
     }
 }
