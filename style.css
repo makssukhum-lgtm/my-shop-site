@@ -145,3 +145,43 @@
         border-radius: 0 16px 16px 0;
     }
 }
+/* Новые стили для кружек */
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 25px;
+    text-align: center;
+}
+
+.mug-card {
+    background-color: #f8f9fa;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    padding: 15px;
+    width: 150px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mug-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.mug-img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.mug-card h4 {
+    margin: 10px 0;
+    font-size: 1em;
+}
+
+.mug-card p {
+    font-size: 1.1em;
+    font-weight: bold;
+}
