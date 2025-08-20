@@ -17,26 +17,42 @@
         <h2>Фото на документы</h2>
         <div class="photo-cards-container">
             <div class="photo-card">
-                <img src="doc-photo-1.jpg" alt="Фото на паспорт" class="photo-card-img">
+                <img src="doc-photo-1.jpg" alt="Фото на паспорт" class="photo-card-img" loading="lazy">
                 <h4>Паспорт РФ</h4>
-                <p>Цена: 490 руб.</p>
+                <p>Цена: 250 руб.</p>
             </div>
             <div class="photo-card">
-                <img src="doc-photo-2.jpg" alt="Фото на визу" class="photo-card-img">
+                <img src="doc-photo-2.jpg" alt="Фото на визу" class="photo-card-img" loading="lazy">
                 <h4>Виза Шенген</h4>
-                <p>Цена: 490 руб.</p>
+                <p>Цена: 300 руб.</p>
             </div>
             <div class="photo-card">
-                <img src="doc-photo-3.jpg" alt="Фото на водительское удостоверение" class="photo-card-img">
+                <img src="doc-photo-3.jpg" alt="Фото на водительское удостоверение" class="photo-card-img" loading="lazy">
                 <h4>Водительское удостоверение</h4>
-                <p>Цена: 490 руб.</p>
+                <p>Цена: 250 руб.</p>
+            </div>
+        </div>
+
+        <button id="open-modal-btn" class="order-button">
+            Оформить заказ
+        </button>
+
+        <div id="order-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <h3>Выберите удобный способ связи</h3>
+                <a href="https://wa.clck.bar/79649265776" class="modal-btn whatsapp-btn">Мы в WhatsApp</a>
+                <a href="https://t.me/kubaprint" class="modal-btn telegram-btn">Мы в Telegram</a>
             </div>
         </div>
     </main>
 
     <footer class="contact-footer">
-        <p class="copyright-text">© 2025. Все права защищены.</p>
+        <div class="copyright-info">
+            <p>© 2021-2023 КубаПринт - сеть фотокопицентров в Краснодаре</p>
+            <p>Работаем на <a href="https://mypoint.online/uchet-prodazh-v-fotosalone/" target="_blank">MyPoint - программа для фотоотделов</a></p>
+        </div>
     </footer>
-
+    <script src="script.js"></script>
 </body>
 </html>
