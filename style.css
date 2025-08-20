@@ -1,32 +1,83 @@
+/* Основная цветовая палитра */
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2980b9;
+    --background-light: #e9eef2;
+    --background-white: #ffffff;
+    --text-dark: #2c3e50;
+    --text-light: #ffffff;
+    --shadow-light: rgba(0,0,0,0.1);
+    --shadow-medium: rgba(0,0,0,0.2);
+}
+
 /* Общие стили для всего сайта */
 body {
     font-family: 'Montserrat', sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    /* Светлый и мягкий градиентный фон */
-    background: linear-gradient(135deg, #f0f4f8, #e9eef2);
-    color: #444;
-    transition: background-color 0.5s ease;
+    background: var(--background-light);
+    color: var(--text-dark);
+}
+
+/* Стили контейнеров */
+header, main, footer {
+    padding: 30px;
+    margin: 20px auto;
+    max-width: 960px;
+    background-color: var(--background-white);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px var(--shadow-light), 0 0 10px rgba(0,0,0,0.05);
+}
+
+.content-section {
+    padding: 40px;
+    margin-top: 30px;
+    border-radius: 20px;
+    background-color: var(--background-white);
+    box-shadow: 0 8px 20px var(--shadow-light);
+}
+
+/* Хедер (шапка) */
+.hero-section {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    text-align: center;
+}
+
+.hero-section h1 {
+    font-size: 2.5em;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.hero-section p {
+    font-size: 1.1em;
+    opacity: 0.9;
+}
+
+h2 {
+    color: var(--text-dark);
+    text-align: center;
+    font-weight: 700;
 }
 
 /* Навигационное меню */
 .main-nav {
-    background: #3498db; /* Синий фон */
+    background: var(--background-white);
     text-align: center;
     padding: 15px 0;
     position: sticky;
     top: 0;
     z-index: 100;
     border-radius: 20px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px var(--shadow-light);
     margin: 10px auto;
     max-width: 960px;
-    transition: background-color 0.3s ease;
 }
 
 .main-nav a {
-    color: #ffffff; /* Белый цвет текста */
+    color: var(--text-dark);
     text-decoration: none;
     font-size: 16px;
     font-weight: bold;
@@ -36,36 +87,12 @@ body {
 }
 
 .main-nav a:hover {
-    color: #f0f4f8; /* Легкое изменение цвета при наведении */
-    background-color: rgba(255, 255, 255, 0.2); /* Прозрачный фон при наведении */
+    color: var(--text-light);
+    background-color: var(--primary-color);
     transform: translateY(-2px);
 }
 
-/* Стили для основных блоков (header, main, footer) */
-header, main, footer {
-    padding: 30px;
-    margin: 20px auto;
-    max-width: 960px;
-    background-color: #ffffff; /* Белый фон */
-    border-radius: 20px; /* Больше скругления */
-    /* Тень, создающая эффект "объёма" */
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1), 0 0 10px rgba(0,0,0,0.05);
-}
-
-header {
-    text-align: center;
-    margin-bottom: 30px;
-    background-color: #3498db; /* Синий фон для заголовка */
-    color: #ffffff; /* Белый текст для заголовка */
-}
-
-h1, h2 {
-    color: #ffffff;
-    text-align: center;
-    font-weight: 700;
-}
-
-/* Стили для кнопок на главной странице */
+/* Кнопки на главной странице */
 .button-container {
     display: flex;
     flex-wrap: wrap;
@@ -79,60 +106,20 @@ h1, h2 {
     width: 250px;
     padding: 30px;
     text-align: center;
-    background: #3498db; /* Синий фон, чтобы не сливаться */
-    color: #ffffff; /* Белый текст */
+    background: var(--primary-color);
+    color: var(--text-light);
     font-size: 20px;
     font-weight: bold;
     text-decoration: none;
     border-radius: 16px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    box-shadow: 0 8px 16px var(--shadow-light);
     transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
 }
 
 .big-button:hover {
     transform: translateY(-5px);
-    box-shadow: 0 12px 24px rgba(0,0,0,0.2);
-    background: #2980b9; /* Более темный синий при наведении */
-}
-
-/* Стили для отдельных страниц товаров */
-.product-page {
-    text-align: center;
-}
-
-/* Стиль для основных информационных блоков */
-.product-info,
-.product-info-container,
-.photo-cards-container,
-.info-card {
-    background-color: #ffffff; /* Белый фон, чтобы выделить блоки */
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-    margin-top: 30px;
-}
-
-.product-info img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 16px;
-    margin-bottom: 20px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-.back-link {
-    display: inline-block;
-    margin: 20px;
-    font-size: 18px;
-    color: #2c3e50;
-    text-decoration: none;
-    transition: all 0.3s ease;
-}
-
-.back-link:hover {
-    transform: translateX(-5px);
-    color: #3498db;
-    text-decoration: underline;
+    box-shadow: 0 12px 24px var(--shadow-medium);
+    background: var(--secondary-color);
 }
 
 /* Модальное окно */
@@ -149,7 +136,7 @@ h1, h2 {
 }
 
 .modal-content {
-    background-color: #ffffff;
+    background-color: var(--background-white);
     margin: 15% auto;
     padding: 40px;
     border: none;
@@ -158,13 +145,8 @@ h1, h2 {
     border-radius: 16px;
     text-align: center;
     position: relative;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 20px var(--shadow-medium);
     animation: fadeIn 0.5s;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: scale(0.8); }
-    to { opacity: 1; transform: scale(1); }
 }
 
 .close-btn {
@@ -197,7 +179,7 @@ h1, h2 {
 
 .modal-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px var(--shadow-light);
 }
 
 .whatsapp-btn {
@@ -208,282 +190,59 @@ h1, h2 {
     background-color: #0088CC;
 }
 
-/* Кнопка "Оформить заказ" */
-#order-section {
+/* Стили для контактов */
+.contact-info {
     text-align: center;
-    margin-top: 40px;
 }
 
-.order-button {
-    background-color: #3498db;
-    color: white;
-    padding: 15px 30px;
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-    font-size: 18px;
-    font-weight: bold;
-    text-decoration: none;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.order-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 8px rgba(0,0,0,0.15);
-}
-
-/* Стили для адресов в футере */
 .address-list {
-    text-align: left;
-    padding-left: 20px;
-    list-style-type: decimal;
-    font-size: 1.1em;
-    font-weight: bold;
-    color: #2c3e50; /* Темный цвет для лучшей читаемости */
-}
-
-ul {
-    list-style-type: none;
-    padding: 0;
     text-align: center;
+    padding: 0;
+    list-style-position: inside;
+    list-style-type: none;
+    font-size: 1.1em;
+    font-weight: 500;
 }
 
-ul li {
-    display: inline-block;
-    margin: 0 10px;
+.address-list li {
+    margin-bottom: 5px;
 }
 
-ul li a {
+.map-link {
+    color: var(--primary-color);
     text-decoration: none;
-    color: #ffffff;
+    font-weight: bold;
     transition: color 0.3s ease;
 }
 
-ul li a:hover {
+.map-link:hover {
     text-decoration: underline;
-    color: #f0f4f8;
+    color: var(--secondary-color);
 }
 
 /* Футер */
 footer {
     text-align: center;
-    margin-top: 20px;
-    padding-top: 20px;
-    border-top: 1px solid #ddd;
+    background-color: var(--background-light);
+    box-shadow: none;
+}
+footer p {
+    color: var(--text-dark);
 }
 
-/* Новые стили для фотокарточек */
-.photo-cards-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-    margin-top: 30px;
+/* Анимации */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
 }
 
-.photo-card {
-    background-color: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    padding: 20px;
-    text-align: center;
-    width: 220px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.photo-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-}
-
-.photo-card-img {
-    max-width: 100%;
-    border-radius: 8px;
-    margin-bottom: 15px;
-}
-
-.photo-card h4 {
-    margin-top: 0;
-    font-size: 1.2em;
-    color: #2c3e50;
-}
-
-.photo-card p {
-    margin: 5px 0;
-}
-
-/* Стили для карточки с разметкой */
-.photo-card-single {
-    background-color: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    padding: 20px;
-    text-align: center;
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.photo-card-img-large {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin-bottom: 20px;
-}
-
-.info-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 20px;
-}
-
-.format-item {
-    background-color: #fff;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-}
-
-.format-item h4 {
-    margin: 0 0 10px 0;
-    color: #333;
-    font-size: 1.1em;
-}
-
-/* Новые стили для кружек */
-.product-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    padding: 25px;
-    text-align: center;
-}
-
-.mug-card {
-    background-color: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    padding: 15px;
-    width: 150px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.mug-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-}
-
-.mug-img {
-    width: 100px;
-    height: 100px;
-    object-fit: contain;
-    border-radius: 8px;
-}
-
-.mug-card h4 {
-    margin: 10px 0;
-    font-size: 1em;
-}
-
-.mug-card p {
-    font-size: 1.1em;
-    font-weight: bold;
-}
-
-/* Новые стили для карточек сублимации */
-.product-info-container {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    margin-top: 30px;
-}
-
-.info-card {
-    background-color: #ffffff;
-    border-radius: 16px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.info-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 25px rgba(0,0,0,0.2);
-}
-
-.info-card-img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 16px 16px 0 0;
-}
-
-.info-text {
-    padding: 25px;
-}
-
-.info-text h3 {
-    margin-top: 0;
-    color: #2c3e50;
-}
-
-.price-list {
-    margin-top: 15px;
-}
-
-.price-list p {
-    margin: 5px 0;
-    font-size: 1.1em;
-}
-
-/* Адаптивные стили для карточек */
+/* Медиазапросы для адаптивности */
 @media (min-width: 768px) {
-    .info-card {
-        flex-direction: row;
-        text-align: left;
-    }
-
-    .info-card-img {
-        width: 50%;
-        height: auto;
-        border-radius: 16px 0 0 16px;
-    }
-
-    .info-card:nth-child(even) {
-        flex-direction: row-reverse;
-    }
-    
-    .info-card:nth-child(even) .info-card-img {
-        border-radius: 0 16px 16px 0;
-    }
-}
-
-/* Медиазапросы для ПК */
-@media (min-width: 768px) {
-    body {
-        font-size: 18px;
-    }
-
-    h1 {
+    .hero-section h1 {
         font-size: 3em;
     }
 
-    h2 {
-        font-size: 2em;
-    }
-
-    .big-button {
-        width: 300px;
-        font-size: 22px;
-        padding: 30px;
-    }
-
-    header, main, footer {
-        padding: 50px;
+    .hero-section p {
+        font-size: 1.2em;
     }
 }
