@@ -77,8 +77,8 @@ h1, h2 {
     width: 250px;
     padding: 30px;
     text-align: center;
-    background: #ffffff;
-    color: #2c3e50;
+    background: #3498db; /* Новый синий фон */
+    color: #ffffff; /* Новый белый цвет текста */
     font-size: 20px;
     font-weight: bold;
     text-decoration: none;
@@ -90,6 +90,7 @@ h1, h2 {
 .big-button:hover {
     transform: translateY(-5px);
     box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+    background: #2980b9; /* Темнее синий при наведении */
 }
 
 /* Стили для отдельных страниц товаров */
