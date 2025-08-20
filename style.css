@@ -295,6 +295,12 @@ p {
     background-color: var(--secondary-color);
 }
 
+/* Отступ для кнопки "Оформить заказ" */
+.order-button-container {
+    margin-top: 40px; /* Отступ сверху */
+    text-align: center; /* Центрирование кнопки */
+}
+
 /* Модальное окно */
 .modal {
     display: none;
