@@ -4,10 +4,7 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-    background-image: url('background.jpg'); /* Здесь укажите название вашего файла */
-    background-size: cover;
-    background-attachment: fixed;
+    background-color: #f4f4f4; /* Простой серый фон */
     color: #333;
 }
 
@@ -15,9 +12,9 @@ header, main, footer {
     padding: 20px;
     margin: 0 auto;
     max-width: 960px;
-    background-color: rgba(255, 255, 255, 0.9); /* Полупрозрачный белый фон для контента */
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    background-color: rgba(255, 255, 255, 0.95); /* Почти непрозрачный белый фон */
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
 }
 
 header {
@@ -41,10 +38,10 @@ h1, h2 {
 .service-card {
     background-color: #fff;
     border: 1px solid #ddd;
-    border-radius: 8px;
+    border-radius: 12px;
     padding: 20px;
     width: 300px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
     transition: transform 0.3s ease-in-out;
     text-align: center;
 }
@@ -58,48 +55,32 @@ h1, h2 {
     margin-top: 0;
 }
 
-/* Стили для формы заказа */
-#order-form {
-    padding: 20px;
-    border-radius: 8px;
+/* Стили для кнопки заказа */
+#order-button-section {
+    text-align: center;
     margin-top: 40px;
 }
 
-#order-form label {
-    font-weight: bold;
-    display: block;
-    margin-bottom: 5px;
-}
-
-#order-form input[type="text"],
-#order-form input[type="email"],
-#order-form textarea {
-    width: 95%;
-    padding: 8px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-#order-form input[type="submit"] {
-    background: linear-gradient(45deg, #28a745, #218838);
+.order-button {
+    display: inline-block;
+    background: linear-gradient(45deg, #28a745, #218838); /* Зеленый градиент */
     color: white;
-    padding: 12px 25px;
+    padding: 15px 30px;
     border: none;
     border-radius: 30px;
     cursor: pointer;
     font-size: 18px;
     font-weight: bold;
-    letter-spacing: 1px;
-    text-transform: uppercase;
+    text-decoration: none;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
-#order-form input[type="submit"]:hover {
+.order-button:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 8px rgba(0,0,0,0.15);
 }
+
 
 /* Стили для ссылок и списка */
 ul {
@@ -116,10 +97,12 @@ ul li {
 ul li a {
     text-decoration: none;
     color: #007bff;
+    transition: color 0.3s ease;
 }
 
 ul li a:hover {
     text-decoration: underline;
+    color: #0056b3;
 }
 
 /* Стили для футера */
