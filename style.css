@@ -4,10 +4,7 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-    background-image: url('background.jpg');
-    background-size: cover;
-    background-attachment: fixed;
+    background: linear-gradient(135deg, #f0f4f8, #c8d3e6);
     color: #333;
     transition: background-color 0.5s ease;
 }
@@ -17,8 +14,8 @@ header, main, footer {
     margin: 20px auto;
     max-width: 960px;
     background-color: rgba(255, 255, 255, 0.95);
-    border-radius: 12px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    border-radius: 16px; /* Более мягкие углы */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15); /* Более выраженная тень */
 }
 
 header {
@@ -27,14 +24,14 @@ header {
 }
 
 h1, h2 {
-    color: #0056b3;
+    color: #2c3e50; /* Глубокий синий цвет */
     text-align: center;
     font-weight: 700;
 }
 
 /* Навигация */
 .main-nav {
-    background-color: rgba(0, 86, 179, 0.9);
+    background-color: rgba(44, 62, 80, 0.9); /* Темно-синяя полупрозрачная полоса */
     text-align: center;
     padding: 15px 0;
     position: sticky;
@@ -72,20 +69,20 @@ h1, h2 {
     width: 250px;
     padding: 25px;
     text-align: center;
-    background-color: #007bff;
+    background: linear-gradient(45deg, #3498db, #2980b9); /* Градиент */
     color: white;
     font-size: 20px;
     font-weight: bold;
     text-decoration: none;
     border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15); /* Более глубокая тень */
     transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
 .big-button:hover {
     transform: translateY(-5px);
-    background-color: #0056b3;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+    background: linear-gradient(45deg, #2980b9, #3498db);
 }
 
 /* Стили для отдельных страниц товаров */
@@ -96,8 +93,8 @@ h1, h2 {
 .product-info {
     background-color: #fff;
     padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     margin-top: 30px;
 }
 
@@ -112,7 +109,7 @@ h1, h2 {
     display: inline-block;
     margin: 20px;
     font-size: 18px;
-    color: #007bff;
+    color: #3498db;
     text-decoration: none;
     transition: transform 0.3s ease;
 }
@@ -204,7 +201,7 @@ h1, h2 {
 }
 
 .order-button {
-    background: linear-gradient(45deg, #007bff, #0056b3);
+    background: linear-gradient(45deg, #3498db, #2980b9);
     color: white;
     padding: 15px 30px;
     border: none;
@@ -236,13 +233,13 @@ ul li {
 
 ul li a {
     text-decoration: none;
-    color: #007bff;
+    color: #3498db;
     transition: color 0.3s ease;
 }
 
 ul li a:hover {
     text-decoration: underline;
-    color: #0056b3;
+    color: #2980b9;
 }
 
 /* Стили для футера */
@@ -262,18 +259,18 @@ footer {
 
     /* Увеличиваем заголовки */
     h1 {
-        font-size: 3em; /* Увеличиваем заголовок h1 в 3 раза */
+        font-size: 3em;
     }
 
     h2 {
-        font-size: 2em; /* Увеличиваем заголовок h2 в 2 раза */
+        font-size: 2em;
     }
 
     /* Увеличиваем кнопки */
     .big-button {
-        width: 300px; /* Делаем кнопки шире */
-        font-size: 22px; /* Делаем текст на кнопках больше */
-        padding: 30px; /* Увеличиваем отступы */
+        width: 300px;
+        font-size: 22px;
+        padding: 30px;
     }
 
     /* Увеличиваем отступы для всего контента */
