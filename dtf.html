@@ -13,109 +13,82 @@
         <a href="index.html">На главную</a>
     </nav>
 
-    <main class="product-page">
-        <div class="info-card">
-            <div class="info-text">
-                <h2>DTF-печать</h2>
-            </div>
+    <main class="product-page content-section">
+        <h2>DTF-печать</h2>
+
+        <div class="info-section">
+            <p>
+                Полноцветная DTF печать позволяет реализовать любые дизайнерские идеи. Технология DTF позволяет наносить принты на футболки с помощью специальной пленки. 
+                При этом используется специальный принтер, который печатает изображение на пленке, а затем оно переносится на ткань с помощью термопресса.
+            </p>
+            <p>Срок изготовления: <strong>2-3 рабочих дня</strong></p>
         </div>
 
-        <div class="content-section">
-            <h3>Примеры работ</h3>
-            <div class="slider-container">
-                <img class="slider-img" src="dtf-slide-1.jpg" alt="DTF-печать">
-                <img class="slider-img" src="dtf-slide-2.jpg" alt="DTF-печать">
-                <img class="slider-img" src="dtf-slide-3.jpg" alt="DTF-печать">
-                <img class="slider-img" src="dtf-slide-4.jpg" alt="DTF-печать">
-            </div>
-            <div class="slider-dots">
-                <span class="dot" onclick="currentSlide(1)"></span>
-                <span class="dot" onclick="currentSlide(2)"></span>
-                <span class="dot" onclick="currentSlide(3)"></span>
-                <span class="dot" onclick="currentSlide(4)"></span>
-            </div>
+        <div class="slider-container">
+            <img class="slider-img" src="dtf-slide-1.jpg" alt="DTF-печать">
+            <img class="slider-img" src="dtf-slide-2.jpg" alt="DTF-печать">
+            <img class="slider-img" src="dtf-slide-3.jpg" alt="DTF-печать">
+            <img class="slider-img" src="dtf-slide-4.jpg" alt="DTF-печать">
+        </div>
+        <div class="slider-dots">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
         </div>
 
-        <div class="info-card">
-            <div class="info-text">
-                <h3>Стоимость DTF-печати</h3>
-                <div class="price-buttons-container">
-                    <p>Цена за одну футболку:</p>
-                    <a href="#" class="price-button">от 1 шт. - 1690 руб.</a>
-                    <a href="#" class="price-button">от 10 шт. - 1490 руб.</a>
-                    <a href="#" class="price-button">от 50 шт. - 990 руб.</a>
-                </div>
-            </div>
+        <div class="price-container">
+            <h3>Стоимость DTF-печати</h3>
+            <button class="price-button" onclick="showPrice('dtf1')">от 1 шт.</button>
+            <button class="price-button" onclick="showPrice('dtf10')">от 10 шт.</button>
+            <button class="price-button" onclick="showPrice('dtf50')">от 50 шт.</button>
+            <p id="dtf-price" class="price-details"></p>
         </div>
-
-        <div class="info-card">
-            <div class="info-text">
-                <h3>Важная информация</h3>
-                <div class="details-info">
-                    <p>Срок изготовления: <strong>2-3 рабочих дня</strong></p>
-                    <p>Гарантия качества: <strong>да</strong></p>
-                    <p>Любой дизайн: <strong>да</strong></p>
-                    <p>Удобное расположение: <strong>да</strong></p>
-                </div>
-            </div>
-        </div>
-
-        <a href="index.html" class="back-link">← Назад</a>
     </main>
 
-    <footer>
-        <p>© 2025. Все права защищены.</p>
+    <footer class="contact-footer">
+        <p class="copyright-text">© 2025. Все права защищены.</p>
     </footer>
 
     <script>
+        function showPrice(buttonId) {
+            let priceElement = document.getElementById('dtf-price');
+            let priceText;
+            if (buttonId === 'dtf1') { priceText = '1690 руб.'; }
+            else if (buttonId === 'dtf10') { priceText = '1490 руб.'; }
+            else if (buttonId === 'dtf50') { priceText = '990 руб.'; }
+            priceElement.textContent = priceText;
+        }
+
         let slideIndex = 1;
         showSlides(slideIndex);
-
-        function plusSlides(n) {
-          showSlides(slideIndex += n);
-        }
-
-        function currentSlide(n) {
-          showSlides(slideIndex = n);
-        }
-
+        function plusSlides(n) { showSlides(slideIndex += n); }
+        function currentSlide(n) { showSlides(slideIndex = n); }
         function showSlides(n) {
-          let i;
-          let slides = document.getElementsByClassName("slider-img");
-          let dots = document.getElementsByClassName("dot");
-          if (n > slides.length) {slideIndex = 1}
-          if (n < 1) {slideIndex = slides.length}
-          for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-          }
-          for (i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace(" active", "");
-          }
-          slides[slideIndex-1].style.display = "block";
-          dots[slideIndex-1].className += " active";
+            let i;
+            let slides = document.getElementsByClassName("slider-img");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) { slides[i].style.display = "none"; }
+            for (i = 0; i < dots.length; i++) { dots[i].className = dots[i].className.replace(" active", ""); }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
         }
-        
-        // Автоматическое переключение слайдов
         let autoSlideIndex = 0;
         carousel();
-
         function carousel() {
-          let i;
-          let slides = document.getElementsByClassName("slider-img");
-          let dots = document.getElementsByClassName("dot");
-          for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-          }
-          autoSlideIndex++;
-          if (autoSlideIndex > slides.length) {autoSlideIndex = 1}
-          for (i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace(" active", "");
-          }
-          slides[autoSlideIndex-1].style.display = "block";
-          dots[autoSlideIndex-1].className += " active";
-          setTimeout(carousel, 5000); // Переключение каждые 5 секунд
+            let i;
+            let slides = document.getElementsByClassName("slider-img");
+            let dots = document.getElementsByClassName("dot");
+            for (i = 0; i < slides.length; i++) { slides[i].style.display = "none"; }
+            autoSlideIndex++;
+            if (autoSlideIndex > slides.length) { autoSlideIndex = 1 }
+            for (i = 0; i < dots.length; i++) { dots[i].className = dots[i].className.replace(" active", ""); }
+            slides[autoSlideIndex - 1].style.display = "block";
+            dots[autoSlideIndex - 1].className += " active";
+            setTimeout(carousel, 5000); // Переключение каждые 5 секунд
         }
     </script>
-
 </body>
 </html>

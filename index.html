@@ -11,7 +11,7 @@
 
     <nav class="main-nav">
         <a href="#services-section">Услуги</a>
-        <a href="#order-section">Заказ</a>
+        <a href="#examples-section">Примеры</a>
         <a href="#contacts-section">Контакты</a>
     </nav>
 
@@ -31,9 +31,25 @@
             </div>
         </section>
 
-        <section id="order-section" class="content-section">
-            <h2>Оформить заказ</h2>
-            <p>Выберите удобный способ связи, чтобы оформить заказ или задать вопрос.</p>
+        <section id="examples-section" class="content-section">
+            <h2>Примеры наших работ</h2>
+            <div class="slider-container">
+                <img class="slider-img" src="example-slide-1.jpg" alt="Пример работы 1">
+                <img class="slider-img" src="example-slide-2.jpg" alt="Пример работы 2">
+                <img class="slider-img" src="example-slide-3.jpg" alt="Пример работы 3">
+                <img class="slider-img" src="example-slide-4.jpg" alt="Пример работы 4">
+            </div>
+            <div class="slider-dots">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+            </div>
+        </section>
+
+        <section id="contacts-section" class="content-section contact-section">
+            <h2>Свяжитесь с нами</h2>
+            <p>Мы принимаем любой дизайн в работу и даем гарантию качества!</p>
             <button id="open-modal-btn" class="order-button">
                 Написать нам
             </button>
@@ -47,25 +63,53 @@
                 <a href="https://t.me/kubaprint" class="modal-btn telegram-btn">Мы в Telegram</a>
             </div>
         </div>
-
-        <section id="contacts-section" class="content-section">
-            <h2>Свяжитесь с нами</h2>
-            <div class="contact-info">
-                <p>Мы находимся по адресам в г. Краснодаре:</p>
-                <ol class="address-list">
-                    <li>ул. Артюшкова, 2, ТЦ "Московский"</li>
-                    <li>ул. Октябрьская, 181/2, маг. Пятёрочка</li>
-                    <li>ул. Ставрапольская, 55, ТЦ "RoyalCityMall"</li>
-                </ol>
-                <p><a href="https://yandex.ru/maps/-/CHxNeXzr" class="map-link">Посмотреть на Яндекс.Картах</a></p>
-            </div>
-        </section>
     </main>
 
-    <footer>
-        <p>© 2025. Все права защищены.</p>
+    <footer class="contact-footer">
+        <div class="contact-info">
+            <p>Мы удобно расположены по адресам в г. Краснодаре:</p>
+            <ol class="address-list">
+                <li>ул. Артюшкова, 2, ТЦ "Московский"</li>
+                <li>ул. Октябрьская, 181/2, маг. Пятёрочка</li>
+                <li>ул. Ставрапольская, 55, ТЦ "RoyalCityMall"</li>
+            </ol>
+            <a href="https://yandex.ru/maps/-/CHxNeXzr" class="map-link">Посмотреть на Яндекс.Картах</a>
+        </div>
+        <p class="copyright-text">© 2025. Все права защищены.</p>
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        // Код для слайдера
+        let slideIndex = 1;
+        showSlides(slideIndex);
+        function plusSlides(n) { showSlides(slideIndex += n); }
+        function currentSlide(n) { showSlides(slideIndex = n); }
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("slider-img");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) { slides[i].style.display = "none"; }
+            for (i = 0; i < dots.length; i++) { dots[i].className = dots[i].className.replace(" active", ""); }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+        let autoSlideIndex = 0;
+        carousel();
+        function carousel() {
+            let i;
+            let slides = document.getElementsByClassName("slider-img");
+            let dots = document.getElementsByClassName("dot");
+            for (i = 0; i < slides.length; i++) { slides[i].style.display = "none"; }
+            autoSlideIndex++;
+            if (autoSlideIndex > slides.length) { autoSlideIndex = 1 }
+            for (i = 0; i < dots.length; i++) { dots[i].className = dots[i].className.replace(" active", ""); }
+            slides[autoSlideIndex - 1].style.display = "block";
+            dots[autoSlideIndex - 1].className += " active";
+            setTimeout(carousel, 5000); // Переключение каждые 5 секунд
+        }
+    </script>
 </body>
 </html>

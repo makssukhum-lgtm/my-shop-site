@@ -13,78 +13,84 @@
         <a href="index.html">На главную</a>
     </nav>
 
-    <main class="product-page">
-        <div class="info-card">
-            <div class="info-text">
-                <h2>Сублимационная печать</h2>
-            </div>
-            <img src="sublimation-main.jpg" alt="Сублимационная печать" class="header-image">
+    <main class="product-page content-section">
+        <h2>Сублимационная печать</h2>
+
+        <div class="info-section">
+            <p>
+                <strong>Сублимационная печать</strong> использует специальные чернила, которые при нагревании превращаются в газ и проникают в структуру ткани. Это позволяет создавать яркие и долговечные принты, которые не выцветают и не ощущаются на ощупь. 
+                Идеально подходит для нанесения изображений на кружки, футболки и другие сувениры.
+            </p>
+            <p>Срок изготовления: <strong>в течение часа</strong></p>
         </div>
         
         <div class="product-info-container">
 
             <div class="info-card">
-                <div class="info-text">
-                    <h3>Сублимация на кружках</h3>
-                    <div class="mug-cards-container">
-                        <div class="mug-card">
-                            <img src="placeholder-white-mug.jpg" alt="Белая кружка" class="mug-img">
-                            <h4>Белая кружка</h4>
-                        </div>
-                        <div class="mug-card">
-                            <img src="placeholder-colored-mug.jpg" alt="Цветная кружка" class="mug-img">
-                            <h4>Цветная кружка</h4>
-                        </div>
-                        <div class="mug-card">
-                            <img src="placeholder-magic-mug.jpg" alt="Магическая кружка" class="mug-img">
-                            <h4>Магическая кружка</h4>
-                        </div>
+                <h3>Сублимация на кружках</h3>
+                <div class="mug-cards-container">
+                    <div class="mug-card">
+                        <img src="placeholder-white-mug.jpg" alt="Белая кружка" class="mug-card-img">
+                        <h4>Белая кружка</h4>
                     </div>
-                    <div class="price-buttons-container">
-                        <p>Цена за одну кружку:</p>
-                        <a href="#" class="price-button">от 1 шт. - 500 руб.</a>
-                        <a href="#" class="price-button">от 10 шт. - 450 руб.</a>
-                        <a href="#" class="price-button">от 50 шт. - 400 руб.</a>
+                    <div class="mug-card">
+                        <img src="placeholder-colored-mug.jpg" alt="Цветная кружка" class="mug-card-img">
+                        <h4>Цветная кружка</h4>
                     </div>
+                    <div class="mug-card">
+                        <img src="placeholder-magic-mug.jpg" alt="Магическая кружка" class="mug-card-img">
+                        <h4>Магическая кружка</h4>
+                    </div>
+                </div>
+                <div class="price-container">
+                    <button class="price-button" onclick="showPrice('mug1')">от 1 шт.</button>
+                    <button class="price-button" onclick="showPrice('mug10')">от 10 шт.</button>
+                    <button class="price-button" onclick="showPrice('mug50')">от 50 шт.</button>
+                    <p id="mug-price" class="price-details"></p>
                 </div>
             </div>
 
             <div class="info-card">
-                <div class="info-text">
-                    <h3>Сублимация на футболках</h3>
-                    <div class="tshirt-card">
-                        <img src="sublimation-main.jpg" alt="Футболка с принтом" class="tshirt-img">
+                <h3>Сублимация на футболках</h3>
+                <div class="mug-cards-container">
+                    <div class="mug-card">
+                        <img src="sublimation-tshirt.jpg" alt="Футболка с принтом" class="mug-card-img">
                         <h4>Белая футболка</h4>
                         <p>50% хлопок, 50% полиэстер</p>
                     </div>
-                    <div class="price-buttons-container">
-                        <p>Цена за одну футболку:</p>
-                        <a href="#" class="price-button">от 1 шт. - 1550 руб.</a>
-                        <a href="#" class="price-button">от 10 шт. - 1350 руб.</a>
-                        <a href="#" class="price-button">от 50 шт. - 1200 руб.</a>
-                    </div>
                 </div>
-            </div>
-            
-            <div class="info-card">
-                <div class="info-text">
-                    <h3>Важная информация</h3>
-                    <div class="details-info">
-                        <p>Срок изготовления: <strong>в течение часа</strong></p>
-                        <p>Гарантия качества: <strong>да</strong></p>
-                        <p>Любой дизайн: <strong>да</strong></p>
-                        <p>Удобное расположение: <strong>да</strong></p>
-                    </div>
+                <div class="price-container">
+                    <button class="price-button" onclick="showPrice('tshirt1')">от 1 шт.</button>
+                    <button class="price-button" onclick="showPrice('tshirt10')">от 10 шт.</button>
+                    <button class="price-button" onclick="showPrice('tshirt50')">от 50 шт.</button>
+                    <p id="tshirt-price" class="price-details"></p>
                 </div>
             </div>
 
         </div>
-        <a href="index.html" class="back-link">← Назад</a>
     </main>
 
-    <footer>
-        <p>© 2025. Все права защищены.</p>
+    <footer class="contact-footer">
+        <p class="copyright-text">© 2025. Все права защищены.</p>
     </footer>
 
+    <script>
+        function showPrice(buttonId) {
+            let priceElement;
+            let priceText;
+            if (buttonId.includes('mug')) {
+                priceElement = document.getElementById('mug-price');
+                if (buttonId === 'mug1') { priceText = '500 руб.'; }
+                else if (buttonId === 'mug10') { priceText = '450 руб.'; }
+                else if (buttonId === 'mug50') { priceText = '400 руб.'; }
+            } else if (buttonId.includes('tshirt')) {
+                priceElement = document.getElementById('tshirt-price');
+                if (buttonId === 'tshirt1') { priceText = '1550 руб.'; }
+                else if (buttonId === 'tshirt10') { priceText = '1350 руб.'; }
+                else if (buttonId === 'tshirt50') { priceText = '1200 руб.'; }
+            }
+            priceElement.textContent = priceText;
+        }
+    </script>
 </body>
 </html>
