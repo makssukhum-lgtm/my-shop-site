@@ -76,3 +76,72 @@
     color: #333;
     font-size: 1.1em;
 }
+/* Новые стили для карточек сублимации */
+.product-info-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.info-card {
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+}
+
+.info-card-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 16px 16px 0 0;
+}
+
+.info-text {
+    padding: 25px;
+}
+
+.info-text h3 {
+    margin-top: 0;
+    color: #2c3e50;
+}
+
+.price-list {
+    margin-top: 15px;
+}
+
+.price-list p {
+    margin: 5px 0;
+    font-size: 1.1em;
+}
+
+/* Адаптивные стили для карточек */
+@media (min-width: 768px) {
+    .info-card {
+        flex-direction: row;
+        text-align: left;
+    }
+
+    .info-card-img {
+        width: 50%;
+        height: auto;
+        border-radius: 16px 0 0 16px;
+    }
+
+    .info-card:nth-child(even) {
+        flex-direction: row-reverse;
+    }
+    
+    .info-card:nth-child(even) .info-card-img {
+        border-radius: 0 16px 16px 0;
+    }
+}
