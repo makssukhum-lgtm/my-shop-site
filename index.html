@@ -43,10 +43,19 @@
         </section>
 
         <section id="order-button-section">
-            <a href="https://wa.clck.bar/79649265776" class="order-button">
-                Оформить заказ в WhatsApp
-            </a>
+            <button id="open-modal-btn" class="order-button">
+                Оформить заказ
+            </button>
         </section>
+
+        <div id="order-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <h3>Выберите удобный способ связи</h3>
+                <a href="https://wa.clck.bar/79649265776" class="modal-btn whatsapp-btn">WhatsApp</a>
+                <a href="https://t.me/kubaprint" class="modal-btn telegram-btn">Telegram</a>
+            </div>
+        </div>
 
         <section id="contacts">
             <h2>Свяжитесь с нами</h2>
@@ -65,5 +74,6 @@
         <p>© 2025. Все права защищены.</p>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>

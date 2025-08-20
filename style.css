@@ -4,7 +4,10 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4; /* Простой серый фон */
+    background-color: #f4f4f4; /* На случай, если картинка не загрузится */
+    background-image: url('background.jpg'); /* Здесь укажите название вашего файла */
+    background-size: cover; /* Растягивает изображение на весь экран */
+    background-attachment: fixed; /* Фиксирует фон при прокрутке */
     color: #333;
 }
 
@@ -12,7 +15,7 @@ header, main, footer {
     padding: 20px;
     margin: 0 auto;
     max-width: 960px;
-    background-color: rgba(255, 255, 255, 0.95); /* Почти непрозрачный белый фон */
+    background-color: rgba(255, 255, 255, 0.95); /* Полупрозрачный белый фон для контента */
     border-radius: 12px;
     box-shadow: 0 6px 12px rgba(0,0,0,0.1);
 }
@@ -55,15 +58,81 @@ h1, h2 {
     margin-top: 0;
 }
 
-/* Стили для кнопки заказа */
+/* Стили для модального окна */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+    border-radius: 12px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.close-btn {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-btn {
+    display: block;
+    width: 80%;
+    padding: 15px;
+    margin: 10px auto;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 30px;
+    transition: transform 0.3s ease;
+}
+
+.modal-btn:hover {
+    transform: translateY(-2px);
+}
+
+.whatsapp-btn {
+    background-color: #25D366;
+}
+
+.telegram-btn {
+    background-color: #0088CC;
+}
+
+/* Стили для основной кнопки */
 #order-button-section {
     text-align: center;
     margin-top: 40px;
 }
 
 .order-button {
-    display: inline-block;
-    background: linear-gradient(45deg, #28a745, #218838); /* Зеленый градиент */
+    background: linear-gradient(45deg, #007bff, #0056b3);
     color: white;
     padding: 15px 30px;
     border: none;
@@ -80,7 +149,6 @@ h1, h2 {
     transform: translateY(-2px);
     box-shadow: 0 6px 8px rgba(0,0,0,0.15);
 }
-
 
 /* Стили для ссылок и списка */
 ul {
