@@ -1,286 +1,44 @@
-/* Общие стили для всего сайта */
-body {
-    font-family: 'Montserrat', sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    /* Светлый и мягкий градиентный фон */
-    background: linear-gradient(135deg, #f0f4f8, #e9eef2);
-    color: #444;
-    transition: background-color 0.5s ease;
-}
-
-/* Стили для основных блоков (header, main, footer) */
-header, main, footer {
-    padding: 30px;
-    margin: 20px auto;
-    max-width: 960px;
-    background-color: #ffffff; /* Белый фон */
-    border-radius: 20px; /* Больше скругления */
-    /* Тень, создающая эффект "объёма" */
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1), 0 0 10px rgba(0,0,0,0.05);
-}
-
-header {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-h1, h2 {
-    color: #2c3e50;
-    text-align: center;
-    font-weight: 700;
-}
-
-/* Навигационное меню */
-.main-nav {
-    background: #ffffff;
-    text-align: center;
-    padding: 15px 0;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    border-radius: 20px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    margin: 10px auto;
-    max-width: 960px;
-}
-
-.main-nav a {
-    color: #555;
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: bold;
-    padding: 10px 20px;
-    transition: all 0.3s ease;
-    border-radius: 12px;
-}
-
-.main-nav a:hover {
-    color: #2c3e50;
-    background-color: #f0f4f8;
-    transform: translateY(-2px);
-}
-
-/* Стили для кнопок на главной странице */
-.button-container {
+/* Новые стили для фотокарточек */
+.photo-cards-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 25px;
     justify-content: center;
+    gap: 30px; /* Отступы между карточками */
     margin-top: 30px;
 }
 
-.big-button {
-    display: block;
-    width: 250px;
-    padding: 30px;
+.photo-card {
+    background-color: #f8f9fa; /* Светлый фон для карточки */
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    padding: 20px;
     text-align: center;
-    background: #ffffff;
-    color: #2c3e50;
-    font-size: 20px;
-    font-weight: bold;
-    text-decoration: none;
-    border-radius: 16px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    width: 220px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.big-button:hover {
+.photo-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
-/* Стили для отдельных страниц товаров */
-.product-page {
-    text-align: center;
-}
-
-.product-info {
-    background-color: #ffffff;
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-    margin-top: 30px;
-}
-
-.product-info img {
+.photo-card-img {
     max-width: 100%;
-    height: auto;
-    border-radius: 16px;
-    margin-bottom: 20px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    margin-bottom: 15px;
 }
 
-.back-link {
-    display: inline-block;
-    margin: 20px;
-    font-size: 18px;
+.photo-card h4 {
+    margin-top: 0;
+    font-size: 1.2em;
     color: #2c3e50;
-    text-decoration: none;
-    transition: all 0.3s ease;
 }
 
-.back-link:hover {
-    transform: translateX(-5px);
-    color: #3498db;
-    text-decoration: underline;
+.photo-card p {
+    margin: 5px 0;
 }
 
-/* Модальное окно */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 101;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.5);
-}
-
-.modal-content {
-    background-color: #ffffff;
-    margin: 15% auto;
-    padding: 40px;
-    border: none;
-    width: 80%;
-    max-width: 450px;
-    border-radius: 16px;
-    text-align: center;
-    position: relative;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-    animation: fadeIn 0.5s;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: scale(0.8); }
-    to { opacity: 1; transform: scale(1); }
-}
-
-.close-btn {
-    color: #aaa;
-    position: absolute;
-    top: 15px;
-    right: 25px;
-    font-size: 36px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: color 0.3s;
-}
-
-.close-btn:hover, .close-btn:focus {
-    color: #555;
-    text-decoration: none;
-}
-
-.modal-btn {
-    display: block;
-    width: 80%;
-    padding: 15px;
-    margin: 15px auto;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 30px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.modal-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-.whatsapp-btn {
-    background-color: #25D366;
-}
-
-.telegram-btn {
-    background-color: #0088CC;
-}
-
-/* Кнопка "Оформить заказ" */
-#order-section {
-    text-align: center;
-    margin-top: 40px;
-}
-
-.order-button {
-    background-color: #3498db;
-    color: white;
-    padding: 15px 30px;
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-    font-size: 18px;
-    font-weight: bold;
-    text-decoration: none;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.order-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 8px rgba(0,0,0,0.15);
-}
-
-/* Ссылки в футере */
-ul {
-    list-style-type: none;
-    padding: 0;
-    text-align: center;
-}
-
-ul li {
-    display: inline-block;
-    margin: 0 10px;
-}
-
-ul li a {
-    text-decoration: none;
-    color: #3498db;
-    transition: color 0.3s ease;
-}
-
-ul li a:hover {
-    text-decoration: underline;
-    color: #2980b9;
-}
-
-/* Футер */
-footer {
-    text-align: center;
-    margin-top: 20px;
-    padding-top: 20px;
-    border-top: 1px solid #ddd;
-}
-
-/* Медиазапросы для ПК */
-@media (min-width: 768px) {
-    body {
-        font-size: 18px;
-    }
-
-    h1 {
-        font-size: 3em;
-    }
-
-    h2 {
-        font-size: 2em;
-    }
-
-    .big-button {
-        width: 300px;
-        font-size: 22px;
-        padding: 30px;
-    }
-
-    header, main, footer {
-        padding: 50px;
-    }
-}
-/* Новые стили для фотокарточек с разметкой */
+/* Стили для карточки с разметкой */
 .photo-card-single {
     background-color: #f8f9fa;
     border-radius: 12px;
