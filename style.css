@@ -10,28 +10,6 @@ body {
     transition: background-color 0.5s ease;
 }
 
-/* Стили для основных блоков (header, main, footer) */
-header, main, footer {
-    padding: 30px;
-    margin: 20px auto;
-    max-width: 960px;
-    background-color: #ffffff; /* Белый фон */
-    border-radius: 20px; /* Больше скругления */
-    /* Тень, создающая эффект "объёма" */
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1), 0 0 10px rgba(0,0,0,0.05);
-}
-
-header {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-h1, h2 {
-    color: #ffffff; /* Белый цвет заголовков */
-    text-align: center;
-    font-weight: 700;
-}
-
 /* Навигационное меню */
 .main-nav {
     background: #3498db; /* Синий фон */
@@ -63,6 +41,30 @@ h1, h2 {
     transform: translateY(-2px);
 }
 
+/* Стили для основных блоков (header, main, footer) */
+header, main, footer {
+    padding: 30px;
+    margin: 20px auto;
+    max-width: 960px;
+    background-color: #ffffff; /* Белый фон */
+    border-radius: 20px; /* Больше скругления */
+    /* Тень, создающая эффект "объёма" */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1), 0 0 10px rgba(0,0,0,0.05);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    background-color: #3498db; /* Синий фон для заголовка */
+    color: #ffffff; /* Белый текст для заголовка */
+}
+
+h1, h2 {
+    color: #ffffff;
+    text-align: center;
+    font-weight: 700;
+}
+
 /* Стили для кнопок на главной странице */
 .button-container {
     display: flex;
@@ -77,20 +79,20 @@ h1, h2 {
     width: 250px;
     padding: 30px;
     text-align: center;
-    background: #3498db; /* Новый синий фон */
-    color: #ffffff; /* Новый белый цвет текста */
+    background: #3498db; /* Синий фон, чтобы не сливаться */
+    color: #ffffff; /* Белый текст */
     font-size: 20px;
     font-weight: bold;
     text-decoration: none;
     border-radius: 16px;
     box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
 }
 
 .big-button:hover {
     transform: translateY(-5px);
     box-shadow: 0 12px 24px rgba(0,0,0,0.2);
-    background: #2980b9; /* Темнее синий при наведении */
+    background: #2980b9; /* Более темный синий при наведении */
 }
 
 /* Стили для отдельных страниц товаров */
@@ -103,7 +105,7 @@ h1, h2 {
 .product-info-container,
 .photo-cards-container,
 .info-card {
-    background-color: #f8f9fa; /* Светлый фон, чтобы выделить блоки */
+    background-color: #ffffff; /* Белый фон, чтобы выделить блоки */
     padding: 40px;
     border-radius: 20px;
     box-shadow: 0 8px 20px rgba(0,0,0,0.1);
