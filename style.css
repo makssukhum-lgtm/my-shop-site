@@ -1,0 +1,129 @@
+/* Основные стили и фон */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    background-image: url('background.jpg'); /* Здесь укажите название вашего файла */
+    background-size: cover;
+    background-attachment: fixed;
+    color: #333;
+}
+
+header, main, footer {
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 960px;
+    background-color: rgba(255, 255, 255, 0.9); /* Полупрозрачный белый фон для контента */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1, h2 {
+    color: #0056b3;
+    text-align: center;
+}
+
+/* Стили для карточек услуг */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.service-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease-in-out;
+    text-align: center;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+.service-card h3 {
+    color: #007bff;
+    margin-top: 0;
+}
+
+/* Стили для формы заказа */
+#order-form {
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 40px;
+}
+
+#order-form label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+#order-form input[type="text"],
+#order-form input[type="email"],
+#order-form textarea {
+    width: 95%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#order-form input[type="submit"] {
+    background: linear-gradient(45deg, #28a745, #218838);
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+#order-form input[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0,0,0,0.15);
+}
+
+/* Стили для ссылок и списка */
+ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
+
+ul li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+ul li a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Стили для футера */
+footer {
+    text-align: center;
+    margin-top: 20px;
+}
