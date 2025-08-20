@@ -34,7 +34,7 @@ h1, h2 {
 
 /* Навигационное меню */
 .main-nav {
-    background: #ffffff;
+    background: #3498db; /* Синий фон */
     text-align: center;
     padding: 15px 0;
     position: sticky;
@@ -44,10 +44,11 @@ h1, h2 {
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     margin: 10px auto;
     max-width: 960px;
+    transition: background-color 0.3s ease;
 }
 
 .main-nav a {
-    color: #555;
+    color: #ffffff; /* Белый цвет текста */
     text-decoration: none;
     font-size: 16px;
     font-weight: bold;
@@ -57,8 +58,8 @@ h1, h2 {
 }
 
 .main-nav a:hover {
-    color: #2c3e50;
-    background-color: #f0f4f8;
+    color: #f0f4f8; /* Легкое изменение цвета при наведении */
+    background-color: rgba(255, 255, 255, 0.2); /* Прозрачный фон при наведении */
     transform: translateY(-2px);
 }
 
