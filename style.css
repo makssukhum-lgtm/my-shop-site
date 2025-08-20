@@ -231,7 +231,16 @@ h1, h2 {
     box-shadow: 0 6px 8px rgba(0,0,0,0.15);
 }
 
-/* Ссылки в футере */
+/* Стили для адресов в футере */
+.address-list {
+    text-align: left;
+    padding-left: 20px;
+    list-style-type: decimal;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #2c3e50; /* Темный цвет для лучшей читаемости */
+}
+
 ul {
     list-style-type: none;
     padding: 0;
