@@ -161,10 +161,29 @@ p {
     box-shadow: 0 8px 20px var(--shadow-light);
 }
 
+/* Слайдеры */
+.slider-container {
+    position: relative;
+    max-width: 600px;
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px var(--shadow-light);
+    height: 400px; /* Добавлен фиксированный размер, чтобы избежать "дергания" */
+}
+
 .slider-img {
     width: 100%;
-    display: none;
+    position: absolute; /* Делаем изображения наложенными друг на друга */
+    top: 0;
+    left: 0;
+    opacity: 0; /* Изначально все изображения невидимы */
+    transition: opacity 0.8s ease-in-out; /* Плавный переход для прозрачности */
     border-radius: 16px;
+}
+
+.slider-img.active-slide {
+    opacity: 1; /* Делаем активное изображение видимым */
 }
 
 .slider-dots {
